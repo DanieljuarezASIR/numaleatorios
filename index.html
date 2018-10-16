@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PRACTICA CON NUMEROS ALEATORIOS PARA EL  Miercoles 17</title>
+    <meta name="description" content="Esta actividad esta preparada para introducir numeros minimos y maximos, al darle al boton aleatorio se reproducirá el numero al azar">
+    
+<style>
+   body {
+        background-image: url(imagen/manhattan.jpg)        /*La imagen de fondo se establecerá mediante background-image: url(y la ubicacion                                                             dentro de este parentesis.formato)*/
+    }
+    #MIN{
+                                            /*Hace referencia a la caja donde se introduce el numero*/
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+    text-align: center;
+  }
+  #MIN:hover{                            /* Se cambia de color al poner el raton sobre la caja donde se introduce el numero */
+    color: #1883ba;                        /* Se pone # para poner el identificador del numero*/
+    background-color: #ffffff;            /* es el color de fondo*/
+      text-align: center;                /* Para centrar la introducción del numero*/
+  }
+       #MAX{
+        
+    text-decoration: none;                /*se usa para establecer el formato del texto*/
+    padding: 10px;                        /*se utilizan para generar espacio alrededor del contenido de un elemento*/
+    font-weight: 600;                    /*permite establecer el grosor con el que se muestran las letras del texto*/
+    font-size: 20px;                     /* tamaño del texto */
+    color: #ffffff;                       /* Color identificado por su id*/
+    background-color: #1883ba;            /*Color de fondo*/
+    border-radius: 6px;                    /* Tamaño del borde redondeado*/
+    border: 2px solid #0016b0;            /*Tamaño del borde*/
+           text-align: center;            /* posición centrada*/
+                  
+
+  }
+  #MAX:hover{                                /* Se cambia de color al poner el raton sobre la caja donde se introduce el numero */
+ color: #1883ba;                        /* Se pone # para poner el identificador del numero*/
+    background-color: #ffffff;            /* es el color de fondo*/
+      text-align: center;                /* Para centrar la introducción del numero*/
+      
+  }
+    
+    #Imagen{
+        width: 150px;                /*anchura*/
+        height: 150px;                /*Altura*/
+        left:50%;                    /* Desplazar hacia la izquierda*/
+    top:50%;                        /*especifica parte de la posición de un elemento posicionado*/
+    margin-left:-70px;                /*establece el margen izquierdo*/
+    margin-top:-103px;                /*establece el margen superior*/
+        position: fixed;            /* especifica el tipo de método de posicionamiento*/
+        
+    }
+    #aleatoria1{
+        margin-left: 281px;            /*establece el margen izquierdo*/
+  margin-right: auto;                  /*establece el margen automatico*/
+            font-size:x-large;           /*establece el tamaño en formato grande*/
+        font-family: cursive;            /*introduce la fuente en cursiva*/
+        padding: 6px;                    /*establece el relleno deseado*/
+        
+    }
+    #nombre{
+        font-family: fantasy;        /*establece la fuente: deseada */
+        font-weight: bold;            /*pone el texto en negrita*/
+        font-size: 41px;            /*establece el tamañodel texto */
+        margin: -24rem;                /* establece el margen pedido*/
+  padding: 26rem;                    /*establece el relleno deseado*/
+        margin-left: -2rem;
+    }
+    #Sonido{
+        margin-top: 303px;            /*establece el margen superior*/
+        padding-left: 108px;            /*establece el relleno por la parte izquierda*/
+        padding-right: 12px;            /*establece el relleno por la parte derecha*/
+        margin-right: 20px;            /*establece el margen derecho*/
+    }
+    
+    footer{
+        text-align: center;        /*establece el texto en la parte central */
+        font-size:75px;            /* establece el tamaño del pie de pagina */
+        color: #ff0303;            /*establece el color deseado al footer*/
+        font-weight: bold;         /* pone el texto en negrita*/
+        font-family: cursive;        /*establece el estilo de letra en cursiva*/
+        
+    }
+    
+    #texto{
+        margin-top: 50px;                /*establece el margen superior*/
+        margin-left: 50px;                /*establece el margen izquierdo*/
+         font-size: 43px;                /*establece el tamaño de texto*/
+    font-weight: bold;                    /* pone el texto en negrita*/
+    font-family: fantasy;                /* establece la fuente deseada*/
+        
+    }
+    
+    #minimo{
+        margin: 8px;                    /*introduce una separacion*/
+    }
+    #maximo{
+        margin:8px;                    /*introduce una separacion*/
+    }
+    
+    #aleatoria1:hover {
+  background: black;                   /*es un atajo para definir los valores individuales del fondo */
+  border-color: red;                    /*Color del borde */
+  color: white;                        /*Color a elegir*/
+}
+    #aleatoria1{
+        -webkit-border-radius: 50px;            
+-moz-border-radius: 50px;                    /* Estas tres opciones son propiedades del border-radius y nos sirve para redondear el elemento*/
+border-radius: 50px;
+        
+    }
+    
+    </style>
+    <script>
+        function aleatoria() {        /* lo primero de crear una función es darle un nombre*/
+
+            var MIN = parseInt(document.getElementById("MIN").value);               /*Definimos la variable y pasamos la cadena de caracteres a                                                                             numero mediante parseInt*/
+            var MAX = parseInt(document.getElementById("MAX").value);               /* seleccionar un elemento del documento por medio del valor                                                                            del atributo id que se le haya asignado*/
+
+            var numeros = parseInt(Math.floor(Math.random() * (MAX - MIN) + MIN));   /* se establece la variable se pasa la cadena de caracteres                                                                            a numero y establecemos la fomurla de aleatoriedad*/
+            audio = document.getElementById("Sonido");                              /*Se establece el nombre y se define el elemento mediante un                                                                    identificador y se le otorgará un nombre para hacerle referencia*/
+            imagen = document.getElementById("Imagen");
+            
+
+
+
+
+            switch (numeros) {   /* Para crear el bucle necesitamos asignarle un nombre para empezar la palabra switch y entre parentesis(nombre                                                                                            que deseamos que se llame)*/
+
+                case 0: /*Tanto case como opciones vayamos a tener*/
+                    imagen.alt = "cero";    /*El termino Alt  describe a cualquier imagen situada dentro de una web*/
+                    imagen.src="imagenes/0.png"; /*Con el atributo src= colocaremos la ubicacion de las imagenes segun el case correspondiente*/
+                    audio.innerHTML = '<audio src="sonidos/cero.mp3" controls autoplay></audio>'; /*Para unir el sonido hacemos refencia al                                                         /* identificado uniendolo al html y estableciendo sus propiedad*/
+                                                                        /*para cargar el audio deseado mediante la etiqueta src */
+                    break; /*De esta manera el bucle pasará al siguiente*/
+                case 1:
+                    imagen.alt = "uno";    /*El termino Alt  describe a cualquier imagen situada dentro de una web*/
+                    imagen.src = "imagenes/uno.png"; /* llamamos al identificador src y establecemos la ruta de la imagen*/
+                    audio.innerHTML = '<audio src="sonidos/uno.mp3" controls autoplay></audio>';
+                    break;
+                case 2:
+                    imagen.src = "imagenes/dos.png"; /* llamamos al identificador src y establecemos la ruta de la imagen*/
+                    imagen.alt = "dos";   /*El termino Alt  describe a cualquier imagen situada dentro de una web*/
+                    audio.innerHTML = '<audio src="sonidos/dos.mp3" controls autoplay></audio>';
+                    break;
+                case 3:
+                    imagen.src = "imagenes/tres.png"; /* llamamos al identificador src y establecemos la ruta de la imagen*/
+                    imagen.alt = "tres"; /*El termino Alt  describe a cualquier imagen situada dentro de una web*/
+                    audio.innerHTML = '<audio src="sonidos/tres.mp3" controls autoplay></audio>';
+                    break;
+                case 4:
+                     imagen.alt = "cuatro"; /*El termino Alt  describe a cualquier imagen situada dentro de una web*/
+                     imagen.src = "imagenes/cuatro.png"; /* llamamos al identificador src y establecemos la ruta de la imagen*/
+                    audio.innerHTML = '<audio src="sonidos/cuatro.mp3" controls autoplay></audio>';
+                    break;
+                case 5:
+                    imagen.alt = "cinco"; /*El termino Alt  describe a cualquier imagen situada dentro de una web*/
+                    imagen.src = "imagenes/cinco.png"; /* llamamos al identificador src y establecemos la ruta de la imagen*/
+                    audio.innerHTML = '<audio src="sonidos/cinco.mp3" controls autoplay></audio>';
+                    break;
+                case 6:
+                    imagen.alt = "seis"; /*El termino Alt  describe a cualquier imagen situada dentro de una web*/
+                    imagen.src = "imagenes/seis.png"; /* llamamos al identificador src y establecemos la ruta de la imagen*/
+                    audio.innerHTML = '<audio src="sonidos/seis.mp3" controls autoplay></audio>';
+                    break;
+                case 7:
+                    imagen.alt = "siete"; /*El termino Alt  describe a cualquier imagen situada dentro de una web*/
+                    imagen.src = "imagenes/siete.png"; /* llamamos al identificador src y establecemos la ruta de la imagen*/
+                    audio.innerHTML = '<audio src="sonidos/siete.mp3" controls autoplay></audio>';
+                    break;
+                case 8:
+                    imagen.alt = "ocho"; /*El termino Alt  describe a cualquier imagen situada dentro de una web*/
+                    imagen.src = "imagenes/ocho.png"; /* llamamos al identificador src y establecemos la ruta de la imagen*/
+                    audio.innerHTML = '<audio src="sonidos/ocho.mp3" controls autoplay></audio>';
+                    break;
+                case 9:
+                    imagen.alt = "nueve"; /*El termino Alt  describe a cualquier imagen situada dentro de una web*/
+                    imagen.src = "imagenes/nueve.png"; /* llamamos al identificador src y establecemos la ruta de la imagen*/
+                    audio.innerHTML = '<audio src="sonidos/nueve.mp3" controls autoplay></audio>';
+                    break;
+                case 10:
+                    imagen.src = "imagenes/diez.png"; /* llamamos al identificador src y establecemos la ruta de la imagen*/
+                    imagen.alt = "Número diez";
+                    audio.innerHTML = '<audio src="sonidos/diez.mp3" controls autoplay></audio>';
+                    break;
+                default:
+                    imagen.src = "imagenes/numeros.png";
+                    imagen.alt = "Números";
+                    audio.innerHTML = '<audio src="sonidos/numero.mp3" style="display:none;" controls autoplay></audio>';
+            }
+
+
+
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+<p id="nombre">Daniel Juárez</p>
+
+
+
+
+
+    <div>
+<div id="texto">
+    <p>Número MIN :<span id="minimo">  <input type="text" id="MIN" size="2" /></span></p>     <!-- Crearemos Diversos div para establecer la                                                                                                 configuracion de los diferentes elementos-->
+    <p>Número MAX :<span id="maximo">  <input type="text" id="MAX" size="2" /></span></p>    <!-- A este div para editarlo le hemos asignado un                                                                                                     identificado unico-->
+
+</div>
+
+
+        <button onClick="aleatoria()" id="aleatoria1"> aleatoria </button> </div>   <!-- Para crear el boton y que tenga la funcion al hacer click                                                                                             le hemos puesto la propiedad onClick-->
+
+
+    <div id="ImagenTipo"><img id="Imagen" src="imagenes/numeros.png" alt="Números" />   <!-- Hemos establecido un div y su identificador para-->                                                                                                 <!--establecer los parametros referidos a la--> 
+                                                                                               <!--imagen numero con sus descripcion alt-->
+    </div>
+    <div id="Sonido"></div>
+
+
+
+<footer>
+    &copy; 2018 Daniel Juárez                              <!--Para agregar alguna innovacion mas a este trabajo he decidido ponerle un copyright-->
+    
+</footer>
+</body>
+</html>
